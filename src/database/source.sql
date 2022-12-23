@@ -36,7 +36,7 @@ CREATE TABLE Orders (
   clientId INT NOT NULL,
   delivererId INT,
   name VARCHAR(50) NOT NULL,
-  description VARCHAR(50) NOT NULL,
+  description TEXT NOT NULL,
   locLongitude DECIMAL,
   locLatitude DECIMAL,
   state ENUM('wait for deliverer', 'on the way', 'submitted'),

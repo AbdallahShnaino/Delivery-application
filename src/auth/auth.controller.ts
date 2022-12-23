@@ -10,12 +10,15 @@ import { Client } from 'src/client/entity/client.entity';
 import { CurrentUser } from 'src/decorators/current-user-decorator';
 import { Deliverer } from 'src/deliverer/entity/deliverer.entity';
 import { AuthGard } from 'src/guards/auth.guard';
+import { serialize } from 'src/interceptors/serialize-interceptors';
 import { Manager } from 'src/manager/entity/manager.entity';
 import { AuthService } from './auth.service';
 import { CreateUserDto } from './dto/create-user.dto';
+import { ShowUserDto } from './dto/show-user.dto';
 import { SignInUserDto } from './dto/signin-user.dto';
 
 @Controller('auth')
+@serialize(ShowUserDto)
 export class AuthController {
   constructor(private authService: AuthService) {}
   @Post('/signup')
