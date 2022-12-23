@@ -11,14 +11,23 @@ export class Order extends Model {
   @Column({ type: DataType.STRING(50) })
   name: string;
 
+  @Column({ type: DataType.INTEGER })
+  quantity: number;
+
   @Column({ type: DataType.STRING(50) })
   description: string;
 
   @Column({ type: DataType.DECIMAL })
-  locLongitude: number;
+  pickupLocLongitude: number;
 
   @Column({ type: DataType.DECIMAL })
-  locLatitude: number;
+  pickupLocLatitude: number;
+
+  @Column({ type: DataType.DECIMAL })
+  dropoffLocLongitude: number;
+
+  @Column({ type: DataType.DECIMAL })
+  dropoffLocLatitude: number;
 
   @Column({ type: DataType.STRING })
   @IsEnum(['wait for deliverer', 'on the way', 'submitted'])

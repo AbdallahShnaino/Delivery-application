@@ -1,5 +1,6 @@
 import { Sequelize } from 'sequelize-typescript';
 import { Client } from 'src/client/entity/client.entity';
+import { Order } from 'src/order/entity/order.entity';
 import { Deliverer } from '../deliverer/entity/deliverer.entity';
 import { Manager } from '../manager/entity/manager.entity';
 
@@ -16,7 +17,7 @@ export const databaseProviders = [
         database: 'delivery_db',
       });
 
-      sequelize.addModels([Client, Deliverer, Manager]);
+      sequelize.addModels([Client, Deliverer, Manager, Order]);
       await sequelize.sync();
       return sequelize;
     },
