@@ -8,6 +8,7 @@ import { LoggingInterceptor } from './interceptors/logging.interceptor';
 import { ManagerModule } from './manager/manager.module';
 import { CurrentUserMiddleware } from './middleware/current-user.middleware';
 import { SharedModule } from './shared/shared.module';
+import { OrderModule } from './order/order.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { SharedModule } from './shared/shared.module';
     DelivererModule,
     ManagerModule,
     SharedModule,
+    OrderModule,
   ],
   providers: [
     {
